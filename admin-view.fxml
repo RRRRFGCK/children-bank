@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="535.0" prefWidth="689.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.system.controller.AdminController">
+   <children>
+      <Pane layoutX="-1.0" layoutY="-4.0" prefHeight="541.0" prefWidth="173.0" style="-fx-background-color: #62d3ff;">
+         <children>
+            <ImageView fitHeight="120.0" fitWidth="172.0" layoutX="26.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../img/logo.jpg" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="33.0" layoutY="126.0" prefHeight="45.0" prefWidth="107.0" text="Child Bank" textFill="#0059ff">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button layoutX="1.0" layoutY="428.0" mnemonicParsing="false" onAction="#logout" prefHeight="113.0" prefWidth="172.0" style="-fx-background-color: #62d3ff;" text="Logout" textFill="#0055ff">
+               <graphic>
+                  <ImageView fitHeight="84.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/logout.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button contentDisplay="TOP" layoutX="1.0" layoutY="158.0" mnemonicParsing="false" onAction="#toHome" prefHeight="113.0" prefWidth="172.0" style="-fx-background-color: #62d3ff;" text="Home" textFill="#0055ff">
+               <graphic>
+                  <ImageView fitHeight="84.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/home.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button contentDisplay="TOP" layoutX="1.0" layoutY="254.0" mnemonicParsing="false" onAction="#toAddUser" prefHeight="98.0" prefWidth="172.0" style="-fx-background-color: #62d3ff;" text="Add User" textFill="#0055ff">
+               <graphic>
+                  <ImageView fitHeight="61.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/adduser.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </Pane>
+      <Pane fx:id="userListPane" layoutX="172.0" layoutY="67.0" prefHeight="468.0" prefWidth="517.0" style="-fx-background-color: #bfffd4;">
+         <children>
+            <TableView fx:id="tableView" layoutX="68.0" layoutY="53.0" prefHeight="245.0" prefWidth="382.0">
+              <columns>
+                <TableColumn fx:id="uid" prefWidth="100.0" text="User ID" />
+                <TableColumn fx:id="username" prefWidth="93.0" text="User Name" />
+                  <TableColumn fx:id="password" prefWidth="90.0" text="Password" />
+                  <TableColumn fx:id="userType" prefWidth="98.0" text="Role" />
+              </columns>
+            </TableView>
+            <Button layoutX="335.0" layoutY="343.0" mnemonicParsing="false" onAction="#updatePassword" text="`Changing Password`" />
+            <TextField fx:id="updatePasswordText" layoutX="148.0" layoutY="343.0" />
+            <Label fx:id="updateMsg" alignment="CENTER" layoutX="66.0" layoutY="313.0" prefHeight="15.0" prefWidth="382.0" textFill="RED" />
+         </children></Pane>
+      <Pane layoutX="172.0" prefHeight="69.0" prefWidth="517.0" style="-fx-background-color: #bfffd4;">
+         <children>
+            <ImageView fitHeight="45.0" fitWidth="66.0" layoutX="465.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../img/user.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="458.0" layoutY="48.0" prefHeight="15.0" prefWidth="60.0" text="Admin" textFill="#0070ff" />
+         </children>
+      </Pane>
+      <Pane fx:id="addUserPane" layoutX="172.0" layoutY="67.0" prefHeight="468.0" prefWidth="517.0" style="-fx-background-color: #bfffd4;" visible="false">
+         <children>
+            <Label layoutX="134.0" layoutY="111.0" text="UserName" textFill="#009dff" />
+            <TextField fx:id="addUsername" layoutX="226.0" layoutY="107.0" />
+            <TextField fx:id="addPassword" layoutX="226.0" layoutY="149.0" />
+            <Label layoutX="134.0" layoutY="153.0" prefHeight="15.0" prefWidth="60.0" text="Password" textFill="#009dff" />
+            <Label layoutX="134.0" layoutY="198.0" text="UserType" textFill="#009dff" />
+            <Button fx:id="addBtn" layoutX="194.0" layoutY="301.0" mnemonicParsing="false" onAction="#addUser" prefHeight="23.0" prefWidth="89.0" text="Add" />
+            <RadioButton fx:id="userType1" layoutX="227.0" layoutY="198.0" mnemonicParsing="false" prefHeight="6.0" prefWidth="63.0" text="Parent" />
+            <RadioButton fx:id="userType2" layoutX="315.0" layoutY="198.0" mnemonicParsing="false" prefHeight="6.0" prefWidth="63.0" text="Child" />
+            <Label fx:id="msgLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="61.0" layoutY="275.0" prefHeight="23.0" prefWidth="400.0" textFill="RED">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

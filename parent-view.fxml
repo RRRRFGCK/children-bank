@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="535.0" prefWidth="689.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.system.controller.ParentController">
+   <children>
+      <Pane layoutX="-1.0" layoutY="-4.0" prefHeight="541.0" prefWidth="173.0" style="-fx-background-color: #62d3ff;">
+         <children>
+            <ImageView fitHeight="120.0" fitWidth="172.0" layoutX="26.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../img/logo.jpg" />
+               </image>
+            </ImageView>
+            <Button layoutX="1.0" layoutY="428.0" mnemonicParsing="false" onAction="#logout" prefHeight="113.0" prefWidth="172.0" style="-fx-background-color: #62d3ff;" text="Logout" textFill="#0055ff">
+               <graphic>
+                  <ImageView fitHeight="84.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/logout.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button alignment="CENTER" contentDisplay="TOP" layoutX="1.0" layoutY="134.0" mnemonicParsing="false" onAction="#toHome" prefHeight="113.0" prefWidth="172.0" style="-fx-background-color: #62d3ff;" text="Home" textFill="#0055ff">
+               <graphic>
+                  <ImageView fitHeight="84.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/home.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button alignment="CENTER" contentDisplay="TOP" layoutX="1.0" layoutY="247.0" mnemonicParsing="false" onAction="#toMissionPane" prefHeight="98.0" prefWidth="172.0" style="-fx-background-color: #62d3ff;" text="Mission" textFill="#0055ff">
+               <graphic>
+                  <ImageView fitHeight="61.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/mission.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button contentDisplay="TOP" layoutX="1.0" layoutY="345.0" mnemonicParsing="false" onAction="#toHistory" prefHeight="98.0" prefWidth="172.0" style="-fx-background-color: #62d3ff;" text="History" textFill="#0055ff">
+               <graphic>
+                  <ImageView fitHeight="61.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/history.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </Pane>
+      <Pane fx:id="homePane" layoutX="172.0" layoutY="67.0" prefHeight="468.0" prefWidth="517.0" style="-fx-background-color: #bfffd4;" visible="false">
+         <children>
+            <TableView fx:id="accountTableView" layoutX="-1.0" layoutY="51.0" prefHeight="245.0" prefWidth="517.0">
+              <columns>
+                <TableColumn fx:id="accountChild" prefWidth="69.0" text="Child" />
+                  <TableColumn fx:id="accountSavings" prefWidth="112.0" text="SavingsBalance" />
+                  <TableColumn fx:id="accountSavings2" prefWidth="109.0" text="Savings2Balance" />
+                  <TableColumn fx:id="accountSavings2Date" minWidth="0.0" prefWidth="116.0" text="Saving2InDate" />
+                  <TableColumn fx:id="accountCurrent" prefWidth="110.0" text="CurrentBalance" />
+              </columns>
+            </TableView>
+            <Line endX="408.0" layoutX="109.0" layoutY="319.0" startX="-109.0" stroke="#004cff" />
+            <Label alignment="CENTER" layoutX="148.0" layoutY="14.0" prefHeight="15.0" prefWidth="204.0" text="Child Account" textFill="#0059ff">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="59.0" layoutY="352.0" text="Interest rate" textFill="#00b7ff" />
+            <Label layoutX="30.0" layoutY="394.0" text="Savings account goal" textFill="#00b7ff" />
+            <TextField fx:id="interestRate" layoutX="191.0" layoutY="348.0" />
+            <TextField fx:id="savingsGoal" layoutX="191.0" layoutY="390.0" />
+            <Button layoutX="375.0" layoutY="348.0" mnemonicParsing="false" onAction="#setConfig" text="Config" textFill="#00b7ff">
+               <graphic>
+                  <ImageView fitHeight="59.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/config.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Label fx:id="configMsg" alignment="CENTER" layoutX="113.0" layoutY="428.0" prefHeight="24.0" prefWidth="311.0" textFill="RED" />
+         </children></Pane>
+      <Pane layoutX="172.0" prefHeight="69.0" prefWidth="517.0" style="-fx-background-color: #bfffd4;">
+         <children>
+            <ImageView fitHeight="45.0" fitWidth="66.0" layoutX="465.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../img/parent.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="loginUserName" alignment="CENTER" layoutX="458.0" layoutY="48.0" prefHeight="15.0" prefWidth="60.0" textFill="#0070ff" />
+            <Line endX="411.0" layoutX="107.0" layoutY="63.0" startX="-107.0" stroke="#004cff" />
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutY="12.0" prefHeight="45.0" prefWidth="194.0" text="Child Bank System" textFill="#0059ff">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="missionPane" layoutX="172.0" layoutY="67.0" prefHeight="468.0" prefWidth="519.0" style="-fx-background-color: #bfffd4;">
+         <children>
+            <Label layoutX="24.0" layoutY="368.0" text="Mission Name" textFill="#009dff" />
+            <TextField fx:id="addMissionName" layoutX="122.0" layoutY="364.0" prefHeight="23.0" prefWidth="107.0" />
+            <Label layoutX="24.0" layoutY="421.0" prefHeight="15.0" prefWidth="82.0" text="Mission Desc" textFill="#009dff" />
+            <Button fx:id="addBtn" contentDisplay="TOP" layoutX="372.0" layoutY="349.0" mnemonicParsing="false" onAction="#addMission" prefHeight="69.0" prefWidth="131.0" style="-fx-background-color: transparent;" textFill="#0145ff">
+               <graphic>
+                  <ImageView fitHeight="70.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/addBtn.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <TextArea fx:id="addMissionDesc" layoutX="122.0" layoutY="402.0" prefHeight="52.0" prefWidth="107.0" />
+            <TextField fx:id="amount" layoutX="319.0" layoutY="391.0" prefHeight="23.0" prefWidth="54.0" />
+            <Label alignment="CENTER" layoutX="143.0" layoutY="312.0" prefHeight="52.0" prefWidth="231.0" text="Add Mission" textFill="#0096ff">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="67.0" fitWidth="62.0" layoutX="247.0" layoutY="371.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../img/coins.png" />
+               </image>
+            </ImageView>
+            <TableView fx:id="missionTableView" layoutY="39.0" prefHeight="228.0" prefWidth="517.0">
+              <columns>
+                <TableColumn fx:id="missionName" prefWidth="75.0" text="Name" />
+                <TableColumn fx:id="missionAmount" prefWidth="59.0" text="Amount" />
+                  <TableColumn fx:id="missionStatus" prefWidth="81.0" text="Status" />
+                  <TableColumn fx:id="missionChild" prefWidth="85.0" text="Child" />
+                  <TableColumn fx:id="missionStartDate" prefWidth="111.0" text="StartDate" />
+                  <TableColumn fx:id="missionEndDate" prefWidth="105.0" text="EndDate" />
+                  <TableColumn fx:id="mid" prefWidth="75.0" text="id" />
+              </columns>
+            </TableView>
+            <Line endX="416.0" layoutX="101.0" layoutY="312.0" startX="-100.0" stroke="#004cff" />
+            <Label alignment="CENTER" layoutX="144.0" layoutY="-12.0" prefHeight="52.0" prefWidth="231.0" text="Mission List" textFill="#0096ff">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button layoutX="355.0" layoutY="270.0" mnemonicParsing="false" onAction="#confirmMission" prefHeight="40.0" prefWidth="107.0" text="Confirm" textFill="#006aff">
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/complete.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Label layoutX="3.0" layoutY="24.0" text="Tip:Completed mission can be clicked to confirm." textFill="#698300" />
+            <Label fx:id="addMissionMsg" alignment="CENTER" layoutX="259.0" layoutY="439.0" prefHeight="15.0" prefWidth="231.0" textFill="#f20000" />
+            <Label fx:id="confirmMsg" alignment="CENTER" layoutX="166.0" layoutY="279.0" prefHeight="23.0" prefWidth="188.0" />
+            <Button layoutX="65.0" layoutY="271.0" mnemonicParsing="false" onAction="#deleteMission" prefHeight="24.0" prefWidth="101.0" text="Delete" textFill="RED">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/delete.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </Pane>
+      <Pane fx:id="historyPane" layoutX="172.0" layoutY="69.0" prefHeight="468.0" prefWidth="517.0" style="-fx-background-color: #bfffd4;" visible="false">
+         <children>
+            <TableView fx:id="historyTableView" layoutX="45.0" layoutY="94.0" prefHeight="288.0" prefWidth="424.0">
+              <columns>
+                <TableColumn fx:id="historyDate" prefWidth="75.0" text="Date" />
+                <TableColumn fx:id="historyChild" prefWidth="95.0" text="Child" />
+                  <TableColumn fx:id="historyAmount" prefWidth="82.0" text="Amount" />
+                  <TableColumn fx:id="historyType" prefWidth="171.0" text="Type" />
+              </columns>
+            </TableView>
+            <Label alignment="CENTER" layoutX="157.0" layoutY="33.0" prefHeight="45.0" prefWidth="204.0" text="History" textFill="#0095ff">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
